@@ -1,0 +1,72 @@
+:root{
+  --bg: #0b0f14;
+  --panel: #121823;
+  --panel-2: #0e141e;
+  --text: #e8eef7;
+  --muted: #9fb0c3;
+  --primary: #4f8cff;
+  --primary-600: #3d73d8;
+  --ok: #22c55e;
+  --warn: #f97316;
+  --border: #1f2a3a;
+}
+
+*{ box-sizing: border-box; }
+html, body { padding: 0; margin: 0; background: var(--bg); color: var(--text); font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji"; }
+
+.container{ max-width: 1100px; margin: 0 auto; padding: 24px; }
+
+.nav { position: sticky; top: 0; z-index: 10; display: flex; justify-content: space-between; align-items: center; padding: 14px 24px; background: rgba(11,15,20,.75); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); }
+.brand{ font-weight: 800; letter-spacing: .3px; margin-right: 16px; }
+.nav-left{ display: flex; align-items: center; gap: 10px; }
+.nav-link{ color: var(--muted); text-decoration: none; padding: 6px 10px; border-radius: 8px; margin-right: 4px; }
+.nav-link:hover{ background: var(--panel); color: var(--text); }
+.nav-link.active{ background: var(--primary); color: white; }
+.nav-right{ display: flex; gap: 10px; align-items: center; }
+.badge{ background: var(--panel); padding: 6px 10px; border: 1px solid var(--border); border-radius: 999px; font-size: 12px; }
+
+.grid{ display: grid; gap: 18px; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); }
+.stack{ display: grid; gap: 16px; }
+.row{ display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+
+.card{ background: linear-gradient(180deg, var(--panel), var(--panel-2)); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; }
+.card-header{ display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 16px 18px; border-bottom: 1px solid var(--border); }
+.card-body{ padding: 18px; }
+.card-complete{ outline: 1.5px dashed var(--ok); }
+
+.btn{ background: transparent; color: var(--text); padding: 10px 14px; border: 1px solid var(--border); border-radius: 10px; cursor: pointer; }
+.btn:hover{ background: #131a27; }
+.btn.primary{ background: var(--primary); color: #fff; border-color: var(--primary-600); }
+.btn.primary:hover{ background: var(--primary-600); }
+
+.input{ width: 100%; background: #0c121b; color: var(--text); border: 1px solid var(--border); border-radius: 10px; padding: 10px 12px; margin: 8px 0 12px 0; }
+
+.prompt{ font-size: 18px; margin: 6px 0 10px 0; }
+.choices{ display: grid; gap: 10px; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); }
+.choice{ background: #0f1622; color: var(--text); border: 1px solid var(--border); padding: 12px; border-radius: 10px; cursor: pointer; text-align: left; }
+.choice.selected{ border-color: var(--primary); box-shadow: 0 0 0 3px rgba(79,140,255,.2); }
+
+.hero h1{ margin: 0 0 8px 0; font-size: 28px; }
+.muted{ color: var(--muted); }
+.feedback{ margin-top: 8px; color: var(--ok); }
+
+.lesson-list{ margin: 8px 0 0 24px; display: grid; gap: 6px; }
+
+.stats{ display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 14px; }
+.stat{ background: #0f1622; padding: 16px; border: 1px solid var(--border); border-radius: 12px; text-align: center; }
+.stat-value{ font-size: 28px; font-weight: 800; }
+.stat-label{ color: var(--muted); font-size: 12px; letter-spacing: .3px; }
+
+.chips{ display: flex; gap: 8px; padding: 0; list-style: none; }
+.chip{ background: #0f1622; border: 1px solid var(--border); border-radius: 999px; padding: 6px 10px; }
+
+.activity{ list-style: none; padding: 0; display: grid; gap: 10px; }
+.activity li{ display: grid; grid-template-columns: 1fr auto auto; gap: 8px; align-items: center; padding: 10px; background: #0f1622; border: 1px solid var(--border); border-radius: 10px; }
+.pill{ padding: 4px 8px; border-radius: 999px; font-size: 12px; border: 1px solid var(--border); }
+.pill.ok{ background: rgba(34,197,94,.15); border-color: rgba(34,197,94,.4); }
+.pill.warn{ background: rgba(249,115,22,.12); border-color: rgba(249,115,22,.35); }
+
+@media (max-width: 640px){
+  .stats{ grid-template-columns: 1fr; }
+  .activity li{ grid-template-columns: 1fr; }
+}
